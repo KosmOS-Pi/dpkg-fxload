@@ -3,6 +3,7 @@
 #
 
 OSNAME !=		uname
+ARCH!=			uname -m
 prefix =		/
 exec_prefix =		${prefix}
 sbindir =		${exec_prefix}/sbin
@@ -50,11 +51,10 @@ ezusb.o: ezusb.c ezusb.h
 
 
 # different degrees of clean ...
-#	FIXME:  shouldn't assume only x86 RPMs get built
 mrproper:	clean
 	rm -f $(PROG)-*.tar.gz
 	rm -f  $(PROG)-*.spec $(PROG)-*.src.rpm
-	rm -rf i386 $(PROG)-* build
+	rm -rf $(ARCH) $(PROG)-* build
 clean:
 	rm -f Log *.o *~ $(PROG)
 
