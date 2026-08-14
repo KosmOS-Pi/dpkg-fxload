@@ -22,7 +22,7 @@ FILES_SRC =		$(FILES_SRC_OTHER) $(FILES_SRC_H) $(FILES_SRC_C)
 
 FILES_OBJ =		$(FILES_SRC_C:%.c=%.o)
 
-REV =			$(shell date "+%Y_%m_%d"| awk '{print $$1}')
+REV !=			date "+%Y_%m_%d"| awk '{print $$1}'
 RELEASE_NAME =		$(PROG)-$(REV)
 
 LIBS =			-lusb
@@ -67,9 +67,8 @@ install: $(PROG)
 
 
 # make a source tarball
-tarball: $(RELEASE_NAME).tar.gz
+tarball: clean
 
-$(RELEASE_NAME).tar.gz: clean
 	@rm -rf $(RELEASE_NAME)
 	@mkdir $(RELEASE_NAME)
 	@for file in $(FILES_SRC); do			\
