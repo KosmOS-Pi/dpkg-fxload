@@ -2,7 +2,7 @@ Index: dpkg-fxload/Makefile
 ===================================================================
 --- dpkg-fxload.orig/Makefile
 +++ dpkg-fxload/Makefile
-@@ -71,9 +71,9 @@ clean:
+@@ -61,9 +61,9 @@ clean:
  
  # install, from tarball or for binary RPM
  install: $(PROG)

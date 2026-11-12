@@ -1,3 +1,10 @@
+fxload (0.0.20260814+kosmos-1~deb13) trixie; urgency=medium
+
+  * Update to version 20260814. Since lack of upstream tag, this
+    version is actually built on commit 1999dc8da7cc532ed88cc52d0dc63cf93c6f1aa6.
+
+ -- Matteo Piscitelli <matteo@matteopiscitelli.it>  Thu, 12 Nov 2026 16:02:32 +0100
+
 fxload (0.0.20140224+kosmos-1~deb13) trixie; urgency=medium
 
   * Package version 20140224 for KosmOS (trixie).
