@@ -2,6 +2,8 @@
 # Builds "fxload" binaries, distribution tarball, and RPMs.
 #
 
+OSNAME !=		uname
+ARCH!=			uname -m
 prefix =		/
 exec_prefix =		${prefix}
 sbindir =		${exec_prefix}/sbin
@@ -21,23 +23,12 @@ FILES_SRC =		$(FILES_SRC_OTHER) $(FILES_SRC_H) $(FILES_SRC_C)
 
 FILES_OBJ =		$(FILES_SRC_C:%.c=%.o)
 
-REV =			$(shell date "+%Y_%m_%d"| awk '{print $$1}')
+REV !=			date "+%Y_%m_%d"| awk '{print $$1}'
 RELEASE_NAME =		$(PROG)-$(REV)
 
-LIBS_LIBUSB =		-lusb
-LIBS_NONLINUX = 	-lusb
+LIBS =			-lusb
 
-LIBS =
-
-# For GNU/Linux and LIBUSB.
-ifdef LIBUSB_SUPPORT
-CFLAGS+=		-DLIBUSB_SUPPORT
-LIBS =			$(LIBS_LIBUSB)
-endif
-# For other systems.
-ifneq ($(shell uname), Linux)
-LIBS =			$(LIBS_NONLINUX)
-endif
+-include Mk/$(OSNAME).Mk
 
 # the interesting targets
 # NOTE:  the default build ("make all") labels itself as a
@@ -60,11 +51,10 @@ ezusb.o: ezusb.c ezusb.h
 
 
 # different degrees of clean ...
-#	FIXME:  shouldn't assume only x86 RPMs get built
 mrproper:	clean
 	rm -f $(PROG)-*.tar.gz
 	rm -f  $(PROG)-*.spec $(PROG)-*.src.rpm
-	rm -rf i386 $(PROG)-* build
+	rm -rf $(ARCH) $(PROG)-* build
 clean:
 	rm -f Log *.o *~ $(PROG)
 
@@ -77,9 +67,8 @@ install: $(PROG)
 
 
 # make a source tarball
-tarball: $(RELEASE_NAME).tar.gz
+tarball: clean
 
-$(RELEASE_NAME).tar.gz: clean
 	@rm -rf $(RELEASE_NAME)
 	@mkdir $(RELEASE_NAME)
 	@for file in $(FILES_SRC); do			\
