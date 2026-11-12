@@ -1,0 +1,8 @@
+fxload for Debian
+
+This version from https://github.com/lhondareyte/fxload. In addition
+to the original linux-hotplug version, this one adds support for
+the ez-usb devices using FX3 protocol.
+Also Makefile is patched to obey DESTDIR variable during install.
+
+ -- Matteo Piscitelli <matteo@matteopiscitelli.it>  Thu, 12 Nov 2026 14:28:40 +0100

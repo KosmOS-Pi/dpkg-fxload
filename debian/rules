@@ -1,0 +1,19 @@
+#!/usr/bin/make -f
+
+include /usr/share/dpkg/default.mk
+
+# DEB_VERSION_UPSTREAM viene dal changelog (es. 2002_04_11+kosmos)
+FXLOAD_VERSION = $(subst +kosmos,,$(DEB_VERSION_UPSTREAM))
+
+%:
+	dh $@
+
+override_dh_auto_build:
+	$(MAKE) \
+	  RPM_OPT_FLAGS='$(CFLAGS) $(CPPFLAGS) -DFXLOAD_VERSION=\"$(FXLOAD_VERSION)\"'
+
+override_dh_auto_install:
+	dh_auto_install -- INSTALL="/usr/bin/install -D"
+
+
+

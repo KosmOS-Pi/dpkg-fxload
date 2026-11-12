@@ -1,0 +1,18 @@
+Source: fxload
+Section: misc
+Priority: optional
+Maintainer: Matteo Piscitelli <matteo@matteopiscitelli.it>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.7.0
+Homepage: https://sourceforge.net/projects/linux-hotplug/
+Rules-Requires-Root: no
+
+Package: fxload
+Architecture: any
+Multi-Arch: foreign
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Firmware download to EZ-USB devices.
+ This program is conveniently able to download firmware into FX, FX2,
+ FX2LP, and FX3 EZ-USB devices, as well as the original AnchorChips
+ EZ-USB. It is intended to be invoked by hotplug scripts when the
+ unprogrammed device appears on the bus.

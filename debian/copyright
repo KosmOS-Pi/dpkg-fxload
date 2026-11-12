@@ -1,0 +1,54 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+
+Files: *
+Copyright: 2010, Linux Hotplug Project
+License: GPL-2+
+
+Files: ezusb.c
+ main.c
+Copyright: 2012, Steve Magnani (steve@digidescorp.com>)
+ 2008, Roger Williams (rawqux@users.sourceforge.net)
+ 2001, Stephen Williams (steve@icarus.com)
+ 2001, 2002, David Brownell (dbrownell@users.sourceforge.net)
+License: GPL-2+
+
+Files: ezusb.h
+Copyright: 2002, David Brownell (dbrownell@users.sourceforge.net)
+ 2001, Stephen Williams (steve@icarus.com)
+License: GPL-2+
+
+Files: fxload.8
+Copyright: 2008, Roger Williams <rawqux@users.sourceforge.net>
+ 2001, 2002, David Brownell <dbrownell@users.sourceforge.net>
+License: Linux-man-pages-copyleft-2-para
+
+Files: debian/*
+Copyright: 2026, Matteo Piscitelli <matteo@matteopiscitelli.it>
+License: GPL-3+
+
+License: Linux-man-pages-copyleft-2-para
+ Permission is granted to make and distribute verbatim copies of this
+ manual provided the copyright notice and this permission notice are
+ preserved on all copies.
+ .
+ Permission is granted to copy and distribute modified versions of this
+ manual under the conditions for verbatim copying, provided that the
+ entire resulting derived work is distributed under the terms of a
+ permission notice identical to this one.
+
+License: GPL-2+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; version 2 dated June, 1991, or (at
+ your option) any later version.
+ On Debian systems, the complete text of version 2 of the GNU General
+ Public License can be found in '/usr/share/common-licenses/GPL-2'.
+
+License: GPL-3+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 3 of the License, or
+ (at your option) any later version.
+ .
+ On Debian systems, the full text of the GNU General Public License
+ version 2 can be found in the file `/usr/share/common-licenses/GPL-3'.
